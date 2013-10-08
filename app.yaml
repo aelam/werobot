@@ -1,0 +1,23 @@
+application: werobotting
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /.*
+  script: main.app
+
+libraries:
+- name: django
+  version: "latest"
+
+builtins:
+- django_wsgi: on
+#- remote_api: on
+
+inbound_services:
+- xmpp_message
+#- xmpp_presence
+#- xmpp_subscribe
+#- xmpp_error
